@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "joowon-custom-mcp",
+  "main": "src/workers/index.ts",
+  "compatibility_date": "2026-11-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "placement": { "region": "aws:ap-northeast-2" },
+  "vars": {
+    "MCP_BASE_URL": "https://joowon-custom-mcp.qkrwndnjs7308.workers.dev"
+  },
+  "services": [
+    { "binding": "PROVIDER_TRANSPORT", "service": "joowon-custom-mcp" }
+  ],
+  "durable_objects": {
+    "bindings": [
+      { "name": "APPLICATION", "class_name": "TmoneyApplication" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["TmoneyApplication"] }
+  ]
+}

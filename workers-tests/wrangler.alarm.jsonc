@@ -1,0 +1,12 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "tmoney-alarm-test-only",
+  "main": "alarm-fixture.ts",
+  "compatibility_date": "2026-11-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "durable_objects": {
+    "bindings": [{ "name": "APPLICATION", "class_name": "AlarmTestApplication" }]
+  },
+  "migrations": [{ "tag": "test-v1", "new_sqlite_classes": ["AlarmTestApplication"] }]
+}

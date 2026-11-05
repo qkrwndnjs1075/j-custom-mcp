@@ -1,0 +1,31 @@
+// Literal pre-v2 storage shape, independent of the new authorization/hold schemas.
+export const historicalHold = {
+  trip: {
+    row: {
+      rotid: "00123",
+      rotsqno: "01",
+      alcndt: "20261030",
+      alcnsqno: "0007",
+      timdte: "20261030",
+      timtim: "1000",
+      timtimo: "0930",
+      terfri: "0000001",
+      tertoi: "0000002",
+      terfro: "0000099",
+      tertoo: "0000088",
+      busgrao: "1",
+      corcodo: "03",
+      afcownrdvscd: "01",
+      adltfee: 15000,
+      lintim: "0130",
+      tckpay: "Y",
+    },
+    expectedAdultFareKrw: 15000,
+    departureTerminal: { TER_COD: "0000001" },
+    arrivalTerminal: { TER_COD: "0000002" },
+  },
+  info: { tckfee1: "15000", totcnt: "4", seatlist: [{ "01": "Y", "03": "Y" }], DIST: "100" },
+  seat: "01",
+  holdId: "historical-hold-private",
+  ticketKind: "IG00",
+};
